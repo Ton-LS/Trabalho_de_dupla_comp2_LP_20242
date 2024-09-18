@@ -1,123 +1,178 @@
-#Tornei pokemon do CT#
+#Torneio pokemon do CT#
+import random
+
 class pokemon:
-    def __init__ (self, PS, PC):
-        self.PS = float(PS)          #Tempo de duração de curso
-        self.PC = float(PC)          #Capacidade de ter um bom emprego no mercado de trabalho
+    def __init__ (self, PS):
+        self.PS = 60       
 
 #Abaixo temos as relações de vantagens entre os tipos de pokemon---------------------------------------------------------------------------------------------------------
 class normal(pokemon):
-    super_efetivo_contra = []
-    pouco_efetivo_contra = ["pedra","aço" ]
-    inefetivo_contra =["fantasma"]
+    def __init__(self, PS, super_efetivo_contra=[], pouco_efetivo_contra = ["pedra","aço" ], inefetivo_contra = ["fantasma"]):
+        super().__init__(PS)
 
 class lutador(pokemon):
-    super_efetivo_contra = ["normal","pedra","aço","gelo","sombrio"]
-    pouco_efetivo_contra = ["voador","venenoso", "inseto", "psíquico", "fada" ]
-    inefetivo_contra =["fantasma"]
+    def __init__(self, PS, super_efetivo_contra, pouco_efetivo_contra, inefetivo_contra):
+        super().__init__(PS)
+        self.super_efetivo_contra = ["normal","pedra","aço","gelo","sombrio"]
+        self.pouco_efetivo_contra = ["voador","venenoso", "inseto", "psíquico", "fada" ]
+        self.inefetivo_contra =["fantasma"]
 
 class voador(pokemon):
-    super_efetivo_contra = ["lutador", "inseto", "planta"]
-    pouco_efetivo_contra = ["pedra", "aço", "elétrico" ]
-    inefetivo_contra =[]
+    def __init__(self, PS, super_efetivo_contra, pouco_efetivo_contra, inefetivo_contra):
+        super().__init__(PS)
+        self.super_efetivo_contra = ["lutador", "inseto", "planta"]
+        self.pouco_efetivo_contra = ["pedra", "aço", "elétrico" ]
+        self.inefetivo_contra =[]
 
 class venenoso(pokemon):
-    super_efetivo_contra = ["planta", "fada"]
-    pouco_efetivo_contra = ["venenoso","terrestre", "pedra", "fantasma" ]
-    inefetivo_contra =["aço"]
+    def __init__(self, PS, super_efetivo_contra, pouco_efetivo_contra, inefetivo_contra):
+        super().__init__(PS)
+        self.super_efetivo_contra = ["planta", "fada"]
+        self.pouco_efetivo_contra = ["venenoso","terrestre", "pedra", "fantasma" ]
+        self.inefetivo_contra =["aço"]
 
 class terrestre(pokemon):
-    super_efetivo_contra = ["venenoso", "pedra", "aço", "fogo"]
-    pouco_efetivo_contra = ["inseto","planta"]
-    inefetivo_contra =["voador"]
+    def __init__(self, PS, super_efetivo_contra, pouco_efetivo_contra, inefetivo_contra):
+        super().__init__(PS)
+        self.super_efetivo_contra = ["venenoso", "pedra", "aço", "fogo"]
+        self.pouco_efetivo_contra = ["inseto","planta"]
+        self.inefetivo_contra =["voador"]
 
 class pedra(pokemon):
-    super_efetivo_contra = ["voador", "inseto", "fogo", "gelo"]
-    pouco_efetivo_contra = ["lutador", "terrestre", "aço"]
-    inefetivo_contra =[]
+    def __init__(self, PS, super_efetivo_contra, pouco_efetivo_contra, inefetivo_contra):
+        super().__init__(PS)
+        self.super_efetivo_contra = ["voador", "inseto", "fogo", "gelo"]
+        self.pouco_efetivo_contra = ["lutador", "terrestre", "aço"]
+        self.inefetivo_contra =[]
 
 class inseto(pokemon):
-    super_efetivo_contra = ["planta", "psíquico", "sombrio"]
-    pouco_efetivo_contra = ["lutador", "voador", "venenoso", "fantasma", "aço", "fogo", "fada"]
-    inefetivo_contra =[]
+    def __init__(self, PS, super_efetivo_contra, pouco_efetivo_contra, inefetivo_contra):
+        super().__init__(PS)
+        self.super_efetivo_contra = ["planta", "psíquico", "sombrio"]
+        self.pouco_efetivo_contra = ["lutador", "voador", "venenoso", "fantasma", "aço", "fogo", "fada"]
+        self.inefetivo_contra =[]
 
 class fantasma(pokemon):
-    super_efetivo_contra = ["fantasma", "psíquico"]
-    pouco_efetivo_contra = ["sombrio"]
-    inefetivo_contra =["normal"]
+    def __init__(self, PS, super_efetivo_contra, pouco_efetivo_contra, inefetivo_contra):
+        super().__init__(PS)
+        self.super_efetivo_contra = ["fantasma", "psíquico"]
+        self.pouco_efetivo_contra = ["sombrio"]
+        self.inefetivo_contra =["normal"]
 
 class aço(pokemon):
-    super_efetivo_contra = ["pedra", "gelo", " fada"]
-    pouco_efetivo_contra = ["aço", "fogo", "água", "elétrico"]
-    inefetivo_contra =[]
+    def __init__(self, PS, super_efetivo_contra, pouco_efetivo_contra, inefetivo_contra):
+        super().__init__(PS)
+        self.super_efetivo_contra = ["pedra", "gelo", " fada"]
+        self.pouco_efetivo_contra = ["aço", "fogo", "água", "elétrico"]
+        self.inefetivo_contra =[]
  
 class fogo(pokemon):
-    super_efetivo_contra = ["inseto", "aço", "planta", "gelo"]
-    pouco_efetivo_contra = ["pedra", "fogo", "água", "dragão"]
-    inefetivo_contra =[]
+    def __init__(self, PS, super_efetivo_contra, pouco_efetivo_contra, inefetivo_contra):
+        super().__init__(PS)
+        self.super_efetivo_contra = ["inseto", "aço", "planta", "gelo"]
+        self.pouco_efetivo_contra = ["pedra", "fogo", "água", "dragão"]
+        self.inefetivo_contra =[]
 
 class água(pokemon):
-    super_efetivo_contra = ["terrestre","pedra", "fogo"]
-    pouco_efetivo_contra = ["água", "planta", "dragão"]
-    inefetivo_contra =[]
+    def __init__(self, PS, super_efetivo_contra, pouco_efetivo_contra, inefetivo_contra):
+        super().__init__(PS)
+        self.super_efetivo_contra = ["terrestre","pedra", "fogo"]
+        self.pouco_efetivo_contra = ["água", "planta", "dragão"]
+        self.inefetivo_contra =[]
   
 class planta(pokemon):
-    super_efetivo_contra = ["terrestre", "pedra", "água"]
-    pouco_efetivo_contra = ["voador", "venenoso", "inseto", "aço", "fogo", "planta", "dragão"]
-    inefetivo_contra =[]
+    def __init__(self, PS, super_efetivo_contra, pouco_efetivo_contra, inefetivo_contra):
+        super().__init__(PS)
+        self.super_efetivo_contra = ["terrestre", "pedra", "água"]
+        self.pouco_efetivo_contra = ["voador", "venenoso", "inseto", "aço", "fogo", "planta", "dragão"]
+        self.inefetivo_contra =[]
 
 class elétrico(pokemon):
-    super_efetivo_contra = ["voador", "água"]
-    pouco_efetivo_contra = ["planta", "elétrico", "dragão"]
-    inefetivo_contra =["terrestre"]
+    def __init__(self, PS, super_efetivo_contra, pouco_efetivo_contra, inefetivo_contra):
+        super().__init__(PS)
+        self.super_efetivo_contra = ["voador", "água"]
+        self.pouco_efetivo_contra = ["planta", "elétrico", "dragão"]
+        self.inefetivo_contra =["terrestre"]
 
 class psíquico(pokemon):
-    super_efetivo_contra = ["lutador", "venenoso"]
-    pouco_efetivo_contra = ["aço", "psíquico"]
-    inefetivo_contra =["sombrio"]
+    def __init__(self, PS, super_efetivo_contra, pouco_efetivo_contra, inefetivo_contra):
+        super().__init__(PS)
+        self.super_efetivo_contra = ["lutador", "venenoso"]
+        self.pouco_efetivo_contra = ["aço", "psíquico"]
+        self.inefetivo_contra =["sombrio"]
 
 class gelo(pokemon):
-    super_efetivo_contra = ["voador", "terrestre", "planta", "dragão"]
-    pouco_efetivo_contra = ["aço", "fogo", "água"]
+    def __init__(self, PS, super_efetivo_contra, pouco_efetivo_contra, inefetivo_contra):
+        super().__init__(PS)
+        self.super_efetivo_contra = ["voador", "terrestre", "planta", "dragão"]
+        self.pouco_efetivo_contra = ["aço", "fogo", "água"]
 
 class dragão(pokemon):
-    super_efetivo_contra = ["dragão"]
-    pouco_efetivo_contra = ["aço"]
-    inefetivo_contra =["fada"]
+    def __init__(self, PS, super_efetivo_contra, pouco_efetivo_contra, inefetivo_contra):
+        super().__init__(PS)
+        self.super_efetivo_contra = ["dragão"]
+        self.pouco_efetivo_contra = ["aço"]
+        self.inefetivo_contra =["fada"]
 
 class sombrio(pokemon):
-    super_efetivo_contra = ["aço", "psíquico"]
-    pouco_efetivo_contra = ["lutador", "sombrio", "fada"]
+    def __init__(self, PS, super_efetivo_contra, pouco_efetivo_contra, inefetivo_contra):
+        super().__init__(PS)
+        self.super_efetivo_contra = ["aço", "psíquico"]
+        self.pouco_efetivo_contra = ["lutador", "sombrio", "fada"]
 
 class fada(pokemon):
-    super_efetivo_contra = ["lutador", "dragão", "sombrio"]
-    pouco_efetivo_contra = ["venenoso", "aço", "fogo"]
-    inefetivo_contra =[]
+    def __init__(self, PS, super_efetivo_contra, pouco_efetivo_contra, inefetivo_contra):
+        super().__init__(PS)
+        self.super_efetivo_contra = ["lutador", "dragão", "sombrio"]
+        self.pouco_efetivo_contra = ["venenoso", "aço", "fogo"]
+        self.inefetivo_contra =[]
 
 #Abaixo começamos nossa pokedex -----------------------------------------------------------------------------------------------------------------------------------------
 
 class bulbasaur(planta, venenoso):
-    ataque_básico = 
-    ataque1 =
-    ataque2 =
-    ataque3 =
-
+    ataques_possíveis = ["bomba de lama", "bomba de lodo", "chicote de vinha"]
+    def __init__(self, PS, ataque):
+        self.PS=float(PS)
+        self.ataque = self.verificador_de_ataque(ataque)
+    def verificador_de_ataque(ataque, ataques_possíveis):
+        if ataque in ataques_possíveis:
+            return ataque
+        else:
+            return "esse ataque não é desse pokemon"
+        
 class charmander(fogo):
-    ataque_básico = 
-    ataque1 =
-    ataque2 =
-    ataque3 =
+    ataques_possíveis = ["brasa", "lança chamas", "rajada de chamas"]
+    def __init__(self, PS, ataque):
+        self.PS=float(PS)
+        self.ataque = self.verificador_de_ataque(ataque)
+    def verificador_de_ataque(ataque, ataques_possíveis):
+        if ataque in ataques_possíveis:
+            return ataque
+        else:
+            return "esse ataque não é desse pokemon"
 
 class squirtle(água):
-    ataque_básico = 
-    ataque1 =
-    ataque2 =
-    ataque3 =
+    ataques_possíveis = ["bolha", "aqua cauda", "aqua jato"]
+    def __init__(self, PS, ataque):
+        self.PS=float(PS)
+        self.ataque = self.verificador_de_ataque(ataque)
+    def verificador_de_ataque(ataque, ataques_possíveis):
+        if ataque in ataques_possíveis:
+            return ataque
+        else:
+            return "esse ataque não é desse pokemon"
 
 class pikachu(elétrico):
-    ataque_básico = 
-    ataque1 =
-    ataque2 =
-    ataque3 =
+    ataques_possíveis = ["choque do trovão", "descarga elétrica", "relâmpago"]
+    def __init__(self, PS, super_efetivo_contra, pouco_efetivo_contra, inefetivo_contra, ataque):
+        super().__init__(PS, super_efetivo_contra, pouco_efetivo_contra, inefetivo_contra)
+        self.PS=float(PS)
+        self.ataque = self.verificador_de_ataque(ataque)
+    def verificador_de_ataque(ataque, ataques_possíveis):
+        if ataque in ataques_possíveis:
+            return ataque
+        else:
+            return "esse ataque não é desse pokemon"
 
 
 
@@ -128,5 +183,27 @@ class pikachu(elétrico):
 # neutro multiplica por 1 o dano
 # inefetivo multiplica por 0 o dano
 
+bichinho1 = squirtle(50,"bolha")
+bichinho2 = charmander(45, "brasa")
+def blbalbla (pokemon1, pokemon2):
+    if str(type(pokemon2)) in pokemon1
+
+
 def dano_causado(desafiante, desafiado):
     return
+
+def batalha(desafiante, desafiado):
+    def ataquebasico(self,alvo): 
+        x = random.choice[1,2,3,4,5,6,7,8,9,10]
+        #ataquecritico 8-10
+        #ataquenormal 5-7
+        #ataqueerrado 1-4
+        if 8<=x<=10:
+            print('O ataque foi crítico!')
+            desafiado.PS = desafiado.PS - 5
+        elif 5<=x<=7:
+            print('O ataque foi normal!')
+            desafiado.PS = desafiado.PS - 3
+        else: 
+            print('O ataque foi fraco!')
+            desafiado.PS = desafiado.PS -1
