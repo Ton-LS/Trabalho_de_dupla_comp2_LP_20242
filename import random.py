@@ -5,7 +5,7 @@ class Pokemon:
         self.vida = vida
         self.evolucao = evolucao
         self.elemento = elemento
-    def ataquebasico(self,alvo): 
+    def ataquebasico(self): 
         x = random.choice[1,2,3,4,5,6,7,8,9,10]
         #ataquecritico 8-10
         #ataquenormal 5-7
@@ -256,18 +256,18 @@ class Blastoise(Squirtle):
         else: 
             return print(f'O {self.bichinho} utilizou o Hydro Pump! O ataque foi fraco!')
             #alvo.vida = alvo - 15
-======================================================================================================================
-def computadorescolhas():
+
+
+def alvoescolhas(alvonome):
     evolucaocomputador = random.choice[1,2,3]
-    alvonome = random.choice['Charmander', 'Bulbasaur', 'Squirtle','Charmeleon','Charizard','Wartortle','Blastoise','Ivysaur','Venusaur']
-    if alvonome == 'Charmander':
+    if alvonome == Charmander:
         escolhaataque = random.choice[ataquebasico, flameburst, dragonrage ]
         print(f'O {alvonome} atacou com {Charmander.escolhaataque}')
     elif alvonome == 'Charmeleon':
         escolhaataque = random.choice[ataquebasico, flameburst, dragonrage, firepunch, flamethrower]
         print(f'O {alvonome} atacou com {Charmeleon.escolhaataque}') 
     elif alvonome == 'Charizard':
-        escolhaataque = random.choice[ataquebasico, flameburst, dragonrage, flamethrower, fireblast ]
+        escolhaataque = random.choice[ataquebasico, flameburst, dragonrage, firepunch, flamethrower, fireblast ]
         print(f'O {alvonome} atacou com {Charmander.escolhaataque}')
     elif alvonome == 'Bulbasaur':
         escolhaataque = random.choice[ataquebasico, vinewip, seedbomb]
@@ -286,12 +286,18 @@ def computadorescolhas():
         print(f'O {alvonome} atacou com {Wartortle.escolhaataque}') 
     elif alvonome == 'Blastoise':
         escolhaataque = random.choice[ataquebasico, bubble, waterpulse, watergun, aquajet, hydropump]
-        print(f'O {alvonome} atacou com {Blastoise.escolhaataque}')   
+        print(f'O {alvonome} atacou com {Blastoise.escolhaataque}')
+def construcaoalvo(alvonome):
+    construtoralvo = 
+
+
+
+
 
 
 bichinho = input('Qual Pokemon você deseja entre Charmander, Bulbasaur ou Squirtle para lutar?')
 evolucao = input('Qual a evolução do Pokemon inicial que você escolheu que deseja selecionar para a luta?')
-pokemonusuario = 
-pokemonmaquina =
+alvonome = random.choice([Charmander, Bulbasaur, Squirtle, Charmeleon, Charizard, Wartortle, Blastoise, Ivysaur, Venusaur])
+
 
 
