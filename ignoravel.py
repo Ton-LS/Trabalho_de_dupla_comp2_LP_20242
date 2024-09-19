@@ -342,7 +342,7 @@ def computadormovimentos(alvonome, evolucaoPC):
 
 #Mecanismo para transformaar a escolha do usuário em uma classe de pokemon válida -----------------------------------------------------------------
 bichinho = input('COm qual Pokemon você deseja jogar: Charmander, Bulbasaur ou Squirtle? ')
-evolucao = int(input('Qual evolução desse Pokemon você deseja usar: 1, 2 ou 3?'))
+evolucao = int(input('Qual evolução desse Pokemon você deseja usar: 1, 2 ou 3? '))
 if bichinho == "Charmander":
     if evolucao == 1:
         pokemonusuario = Charmander()
@@ -350,6 +350,7 @@ if bichinho == "Charmander":
     elif evolucao == 2:
         pokemonusuario = Charmeleon()
         ataquespossíveis=5
+        print("Charmander evoluiu para Charmeleon")
     elif evolucao == 3:
         pokemonusuario = Charizard()
         ataquespossíveis=6
@@ -420,7 +421,7 @@ print(f'O Pokemon do adversário é {alvonome.bichinho} Dados: PS = {alvonome.vi
 if evolucao ==  1:
     print ('A batalha começa!')
     while pokemonusuario.vida > 0 and alvonome.vida > 0:
-        print("\nO que você faz")
+        print("\nO que você faz?")
         print("1. Ataque básico I")
         print("2. Ataque Rápido I")
         print("3. Ataque carregado I")
@@ -428,29 +429,29 @@ if evolucao ==  1:
         if movimento == 1:
             pokemonusuario.ataquebasico(alvonome)
             print(computadormovimentos(alvonome, evolucaoPC))
-            print(pokemonusuario.vida)
-            print(alvonome.vida)
+            print(f"Seu {pokemonusuario.bichinho} tem PS = {pokemonusuario.vida}")
+            print(f"Seu {alvonome.bichinho} tem PS = {alvonome.vida}")
             print("-"*60)
         elif movimento == 2:
             pokemonusuario.Ataque_rápido_I(alvonome)
             print(computadormovimentos(alvonome, evolucaoPC))
-            print(pokemonusuario.vida)
-            print(alvonome.vida)
+            print(f"Seu {pokemonusuario.bichinho} tem PS = {pokemonusuario.vida}")
+            print(f"Seu {alvonome.bichinho} tem PS = {alvonome.vida}")
             print("-"*60)
         elif movimento == 3:
             pokemonusuario.Ataque_carregado_I(alvonome)
             print(computadormovimentos(alvonome, evolucaoPC))
-            print(pokemonusuario.vida)
-            print(alvonome.vida)
+            print(f"Seu {pokemonusuario.bichinho} tem PS = {pokemonusuario.vida}")
+            print(f"Seu {alvonome.bichinho} tem PS = {alvonome.vida}")
             print("-"*60)
     if pokemonusuario.vida > 0:
-        print("Você venceu!")
-    else: print("Você foi derrotado")
+        print(f"Você venceu! {alvonome.bichinho} foi derrotado por seu {pokemonusuario.bichinho}")
+    else: print(f"Você foi derrotado! Seu {pokemonusuario.bichinho} foi derrotado pelo {alvonome.bichinho} do líder deste ginásio.")
 
 elif evolucao == 2:
     print ('A batalha começa!')
     while pokemonusuario.vida > 0 and alvonome.vida > 0:
-        print("\nO que você faz")
+        print("\nO que você faz?")
         print("1. Ataque básico I")
         print("2. Ataque Rápido I")
         print("3. Ataque carregado I")
@@ -460,41 +461,41 @@ elif evolucao == 2:
         if movimento == 1:
             pokemonusuario.ataquebasico(alvonome)
             print(computadormovimentos(alvonome, evolucaoPC))
-            print(pokemonusuario.vida)
-            print(alvonome.vida)
+            print(f"Seu {pokemonusuario.bichinho} tem PS = {pokemonusuario.vida}")
+            print(f"Seu {alvonome.bichinho} tem PS = {alvonome.vida}")
             print("-"*60)
         elif movimento == 2:
             pokemonusuario.Ataque_rápido_I(alvonome)
             print(computadormovimentos(alvonome, evolucaoPC))
-            print(pokemonusuario.vida)
-            print(alvonome.vida)
+            print(f"Seu {pokemonusuario.bichinho} tem PS = {pokemonusuario.vida}")
+            print(f"Seu {alvonome.bichinho} tem PS = {alvonome.vida}")
             print("-"*60)
         elif movimento == 3:
             pokemonusuario.Ataque_carregado_I(alvonome)
             print(computadormovimentos(alvonome, evolucaoPC))
-            print(pokemonusuario.vida)
-            print(alvonome.vida)
+            print(f"Seu {pokemonusuario.bichinho} tem PS = {pokemonusuario.vida}")
+            print(f"Seu {alvonome.bichinho} tem PS = {alvonome.vida}")
             print("-"*60)
         elif movimento == 4:
             pokemonusuario.Ataque_rápido_II(alvonome)
             print(computadormovimentos(alvonome, evolucaoPC))
-            print(pokemonusuario.vida)
-            print(alvonome.vida)
+            print(f"Seu {pokemonusuario.bichinho} tem PS = {pokemonusuario.vida}")
+            print(f"Seu {alvonome.bichinho} tem PS = {alvonome.vida}")
             print("-"*60)
         elif movimento == 5:
             pokemonusuario.Ataque_carregado_II(alvonome)
             print(computadormovimentos(alvonome, evolucaoPC))
-            print(pokemonusuario.vida)
-            print(alvonome.vida)
+            print(f"Seu {pokemonusuario.bichinho} tem PS = {pokemonusuario.vida}")
+            print(f"Seu {alvonome.bichinho} tem PS = {alvonome.vida}")
             print("-"*60)
     if pokemonusuario.vida > 0:
-            print("Você venceu!")
-    else: print("Você foi derrotado")
+            print(f"Você venceu!{alvonome.bichinho} foi derrotado por seu {pokemonusuario.bichinho}")
+    else: print(f"Você foi derrotado! Seu {pokemonusuario.bichinho} foi derrotado pelo {alvonome.bichinho} do líder deste ginásio.")
 
 elif evolucao == 3:
     print ('A batalha começa!')
     while pokemonusuario.vida > 0 and alvonome.vida > 0:
-        print(f"\nO que você faz")
+        print(f"\nO que você faz?")
         print("1. Ataque básico I")
         print("2. Ataque Rápido I")
         print("3. Ataque carregado I")
@@ -505,39 +506,39 @@ elif evolucao == 3:
         if movimento == 1:
             pokemonusuario.ataquebasico(alvonome)
             print(computadormovimentos(alvonome, evolucaoPC))
-            print(pokemonusuario.vida)
-            print(alvonome.vida)
+            print(f"Seu {pokemonusuario.bichinho} tem PS = {pokemonusuario.vida}")
+            print(f"Seu {alvonome.bichinho} tem PS = {alvonome.vida}")
             print("-"*60)
         elif movimento == 2:
             pokemonusuario.Ataque_rápido_I(alvonome)
             print(computadormovimentos(alvonome, evolucaoPC))
-            print(pokemonusuario.vida)
-            print(alvonome.vida)
+            print(f"Seu {pokemonusuario.bichinho} tem PS = {pokemonusuario.vida}")
+            print(f"Seu {alvonome.bichinho} tem PS = {alvonome.vida}")
             print("-"*60)
         elif movimento == 3:
             pokemonusuario.Ataque_carregado_I(alvonome)
             print(computadormovimentos(alvonome, evolucaoPC))
-            print(pokemonusuario.vida)
-            print(alvonome.vida)
+            print(f"Seu {pokemonusuario.bichinho} tem PS = {pokemonusuario.vida}")
+            print(f"Seu {alvonome.bichinho} tem PS = {alvonome.vida}")
             print("-"*60)
         elif movimento == 4:
             pokemonusuario.Ataque_rápido_II(alvonome)
             print(computadormovimentos(alvonome, evolucaoPC))
-            print(pokemonusuario.vida)
-            print(alvonome.vida)
+            print(f"Seu {pokemonusuario.bichinho} tem PS = {pokemonusuario.vida}")
+            print(f"Seu {alvonome.bichinho} tem PS = {alvonome.vida}")
             print("-"*60)
         elif movimento == 5:
             pokemonusuario.Ataque_carregado_II(alvonome)
             print(computadormovimentos(alvonome, evolucaoPC))
-            print(pokemonusuario.vida)
-            print(alvonome.vida)
+            print(f"Seu {pokemonusuario.bichinho} tem PS = {pokemonusuario.vida}")
+            print(f"Seu {alvonome.bichinho} tem PS = {alvonome.vida}")
             print("-"*60)
         elif movimento == 6:
             pokemonusuario.Ataque_especial(alvonome)
             print(computadormovimentos(alvonome, evolucaoPC))
-            print(pokemonusuario.vida)
-            print(alvonome.vida)
+            print(f"Seu {pokemonusuario.bichinho} tem PS = {pokemonusuario.vida}")
+            print(f"Seu {alvonome.bichinho} tem PS = {alvonome.vida}")
             print("-"*60)
     if pokemonusuario.vida > 0:
-            print("Você venceu!")
-    else: print("Você foi derrotado")
+            print(f"Você venceu! {alvonome.bichinho} foi derrotado por seu {pokemonusuario.bichinho}")
+    else: print(f"Você foi derrotado! Seu {pokemonusuario.bichinho} foi derrotado pelo {alvonome.bichinho} do líder deste ginásio.")
