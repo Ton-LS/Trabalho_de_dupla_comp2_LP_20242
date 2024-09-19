@@ -1,4 +1,6 @@
 import random
+#primeiro definimos as classes, começando pela classe Pokemon que seria "mãe" de todas as outras
+#definimos como bichinho sendo o nome do pokemon, a vida respectiva a cada evolução, o numero da evolução do pokemon e o seu elemento respectivamente
 class Pokemon:
     def __init__(self, bichinho, vida, evolucao ,  elemento, ):
         self.bichinho = bichinho
@@ -11,15 +13,15 @@ class Pokemon:
         #ataquenormal 5-7
         #ataqueerrado 1-4
         if 8<=x<=10:
-            print('O ataque foi crítico!')
+            print(f'O {self.bichinho} utilizou o ataque básico, ataque foi crítico!')
             alvo.vida = alvo.vida - 5
         elif 5<=x<=7:
-            print('O ataque foi normal!')
+            print(f'O {self.bichinho} utilizou o ataque básico, ataque foi normal!')
             alvo.vida = alvo.vida - 3
         else: 
-            print('O ataque foi fraco!')
+            print(f'O {self.bichinho} utilizou o ataque básico, ataque foi fraco!')
             alvo.vida = alvo.vida -1
-
+#agora fomos para a primeira classe filha para criar um charmander, embaixo de cada ataque, tem um guia para mostrar como funciona o d10 que criamos para saber de como será o ataque 
 class Charmander(Pokemon):
     def __init__(self):
         Pokemon.__init__(self, bichinho = 'Charmander', vida = 100, evolucao = 1 , elemento ='Fogo')
@@ -30,15 +32,15 @@ class Charmander(Pokemon):
         #ataqueerrado 1-4
         if 8<=x<=10:
             alvo.vida = alvo.vida - 15
-            return print(f'O {self.bichinho} utilizou o Flame Burst! Acerto em cheio!')
+            print(f'O {self.bichinho} utilizou o Flame Burst! O ataque foi em cheio!')
             
         elif 5<=x<=7:
             alvo.vida = alvo.vida - 9
-            return print(f'O {self.bichinho} utilizou o Flame Burst! Acerto normal!')
+            print(f'O {self.bichinho} utilizou o Flame Burst! O ataque foi normal!')
             
         else: 
             alvo.vida = alvo.vida -3
-            return print(f'O {self.bichinho} utilizou o Flame Burst! O ataque foi fraco!')
+            print(f'O {self.bichinho} utilizou o Flame Burst! O ataque foi fraco!')
             
     def Ataque_carregado_I(self,alvo):
         x = random.randint(1,10)
@@ -47,16 +49,16 @@ class Charmander(Pokemon):
         #ataqueerrado 1-4
         if 8<=x<=10:
             alvo.vida = alvo.vida - 20
-            return print(f'O {self.bichinho} utilizou o Dragon Rage! Acerto em cheio!')
+            print(f'O {self.bichinho} utilizou o Dragon Rage! O ataque foi em cheio!')
             
         elif 5<=x<=7:
             alvo.vida = alvo.vida - 12
-            return print(f'O {self.bichinho} utilizou o Dragon Rage! Acerto normal!')
+            print(f'O {self.bichinho} utilizou o Dragon Rage! O ataque foi normal!')
         
         else: 
             alvo.vida = alvo.vida - 4
-            return print(f'O {self.bichinho} utilizou o Dragon Rage! O ataque foi fraco!')
-            
+            print(f'O {self.bichinho} utilizou o Dragon Rage! O ataque foi fraco!')
+#a unica diferença de uma classe pra outra dentro das evoluções são que aumentamos o numero de ataques, a primeira evolução só consegue fazer ataques nivel 1, a segunda consegue fazer ataques nivel 2 e a ultima possui um ataque especial           
 class Charmeleon (Charmander):
     def __init__(self):
         Pokemon.__init__(self, bichinho = 'Charmeleon', vida = 200, evolucao = 2 , elemento ='Fogo' )
@@ -67,15 +69,15 @@ class Charmeleon (Charmander):
         #ataqueerrado 1-4
         if 8<=x<=10:
             alvo.vida = alvo.vida - 25
-            return print(f'O {self.bichinho} utilizou o Fire Punch! Acerto em cheio!')
+            print(f'O {self.bichinho} utilizou o Fire Punch! O ataque foi em cheio!')
             
         elif 5<=x<=7:
             alvo.vida = alvo.vida - 15
-            return print(f'O {self.bichinho} utilizou o Fire Punch! Acerto normal!')
+            print(f'O {self.bichinho} utilizou o Fire Punch! O ataque foi normal!')
             
         else: 
             alvo.vida = alvo.vida -10
-            return print(f'O {self.bichinho} utilizou o Fire Punch! O ataque foi fraco!')
+            print(f'O {self.bichinho} utilizou o Fire Punch! O ataque foi fraco!')
             
     def Ataque_carregado_II(self, alvo):
         x = random.randint(1,10)
@@ -84,15 +86,15 @@ class Charmeleon (Charmander):
         #ataqueerrado 1-4
         if 8<=x<=10:
             alvo.vida = alvo.vida - 50
-            return print(f'O {self.bichinho} utilizou o Flame Thrower! Acerto em cheio!')
+            print(f'O {self.bichinho} utilizou o Flame Thrower! O ataque foi em cheio!')
             
         elif 5<=x<=7:
             alvo.vida = alvo.vida - 25
-            return print(f'O {self.bichinho} utilizou o Flame Thrower! Acerto normal!')
+            print(f'O {self.bichinho} utilizou o Flame Thrower! O ataque foi normal!')
             
         else: 
             alvo.vida = alvo.vida - 15
-            return print(f'O {self.bichinho} utilizou o Flame Thrower! O ataque foi fraco!')
+            print(f'O {self.bichinho} utilizou o Flame Thrower! O ataque foi fraco!')
             
 class Charizard(Charmeleon):
     def __init__(self):
@@ -104,16 +106,16 @@ class Charizard(Charmeleon):
         #ataqueerrado 1-4
         if 8<=x<=10:
             alvo.vida = alvo.vida - 60
-            return print(f'O {self.bichinho} utilizou o Fire Blast! Acerto em cheio!')
+            print(f'O {self.bichinho} utilizou o Fire Blast! O ataque foi em cheio!')
             
         elif 5<=x<=7:
             alvo.vida = alvo.vida - 30
-            return print(f'O {self.bichinho} utilizou o Fire Blast! Acerto normal!')
+            print(f'O {self.bichinho} utilizou o Fire Blast! O ataque foi normal!')
             
         else: 
             alvo.vida = alvo.vida - 15
-            return print(f'O {self.bichinho} utilizou o Fire Blast! O ataque foi fraco!')
-            
+            print(f'O {self.bichinho} utilizou o Fire Blast! O ataque foi fraco!')
+#agora repetimos o processo para as outras duas familias de pokemons            
 class Bulbasaur(Pokemon):
     def __init__(self):
         Pokemon.__init__(self, bichinho = 'Bulbasaur', vida = 100, evolucao = 1 , elemento ='Planta')
@@ -124,15 +126,15 @@ class Bulbasaur(Pokemon):
         #ataqueerrado 1-4
         if 8<=x<=10:
             alvo.vida = alvo.vida - 15
-            return print(f'O {self.bichinho} utilizou o Vine Wip! Acerto em cheio!')
+            print(f'O {self.bichinho} utilizou o Vine Wip! O ataque foi em cheio!')
             
         elif 5<=x<=7:
             alvo.vida = alvo.vida - 9
-            return print(f'O {self.bichinho} utilizou o Vine Wip! Acerto normal!')
+            print(f'O {self.bichinho} utilizou o Vine Wip! O ataque foi normal!')
             
         else: 
             alvo.vida = alvo.vida -3
-            return print(f'O {self.bichinho} utilizou o Vine Wip! O ataque foi fraco!')
+            print(f'O {self.bichinho} utilizou o Vine Wip! O ataque foi fraco!')
             
     def Ataque_carregado_I(self, alvo):
         x = random.randint(1,10)
@@ -141,15 +143,15 @@ class Bulbasaur(Pokemon):
         #ataqueerrado 1-4
         if 8<=x<=10:
             alvo.vida = alvo.vida - 20
-            return print(f'O {self.bichinho} utilizou o Seed Bonmb! Acerto em cheio!')
+            print(f'O {self.bichinho} utilizou o Seed Bonmb! O ataque foi em cheio!')
             
         elif 5<=x<=7:
             alvo.vida = alvo.vida - 12
-            return print(f'O {self.bichinho} utilizou o Seed Bonmb! Acerto normal!')
+            print(f'O {self.bichinho} utilizou o Seed Bonmb! O ataque foi normal!')
             
         else: 
             alvo.vida = alvo.vida - 4
-            return print(f'O {self.bichinho} utilizou o Seed Bonmb! O ataque foi fraco!')
+            print(f'O {self.bichinho} utilizou o Seed Bonmb! O ataque foi fraco!')
             
 class Ivysaur(Bulbasaur):
     def __init__(self):
@@ -161,15 +163,15 @@ class Ivysaur(Bulbasaur):
         #ataqueerrado 1-4
         if 8<=x<=10:
             alvo.vida = alvo.vida - 25
-            return print(f'O {self.bichinho} utilizou o Solar Beam! Acerto em cheio!')
+            print(f'O {self.bichinho} utilizou o Solar Beam! O ataque foi em cheio!')
             
         elif 5<=x<=7:
             alvo.vida = alvo.vida - 15
-            return print(f'O {self.bichinho} utilizou o Solar Beam! Acerto normal!')
+            print(f'O {self.bichinho} utilizou o Solar Beam! O ataque foi normal!')
             
         else: 
             alvo.vida = alvo.vida -10
-            return print(f'O {self.bichinho} utilizou o Solar Beam! O ataque foi fraco!')
+            print(f'O {self.bichinho} utilizou o Solar Beam! O ataque foi fraco!')
             
     def Ataque_carregado_II(self,alvo):
         x = random.randint(1,10)
@@ -178,15 +180,15 @@ class Ivysaur(Bulbasaur):
         #ataqueerrado 1-4
         if 8<=x<=10:
             alvo.vida = alvo.vida - 50
-            return print(f'O {self.bichinho} utilizou o Power Wip! Acerto em cheio!')
+            print(f'O {self.bichinho} utilizou o Power Wip! O ataque foi em cheio!')
            
         elif 5<=x<=7:
             alvo.vida = alvo.vida - 25
-            return print(f'O {self.bichinho} utilizou o Power Wip! Acerto normal!')
+            print(f'O {self.bichinho} utilizou o Power Wip! O ataque foi normal!')
             
         else: 
             alvo.vida = alvo.vida - 15
-            return print(f'O {self.bichinho} utilizou o Power Wip! O ataque foi fraco!')
+            print(f'O {self.bichinho} utilizou o Power Wip! O ataque foi fraco!')
             
 class Venusaur(Ivysaur):
     def __init__(self):
@@ -198,15 +200,15 @@ class Venusaur(Ivysaur):
         #ataqueerrado 1-4
         if 8<=x<=10:
             alvo.vida = alvo.vida - 60
-            return print(f'O {self.bichinho} utilizou o Petal Blizzard! Acerto em cheio!')
+            print(f'O {self.bichinho} utilizou o Petal Blizzard! O ataque foi em cheio!')
             
         elif 5<=x<=7:
             alvo.vida = alvo.vida - 30
-            return print(f'O {self.bichinho} utilizou o Petal Blizzard! Acerto normal!')
+            print(f'O {self.bichinho} utilizou o Petal Blizzard! O ataque foi normal!')
             
         else: 
             alvo.vida = alvo.vida - 15
-            return print(f'O {self.bichinho} utilizou o Petal Blizzard! O ataque foi fraco!')
+            print(f'O {self.bichinho} utilizou o Petal Blizzard! O ataque foi fraco!')
             
 class Squirtle(Pokemon):
     def __init__(self):
@@ -218,15 +220,15 @@ class Squirtle(Pokemon):
         #ataqueerrado 1-4
         if 8<=x<=10:
             alvo.vida = alvo.vida - 15
-            return print(f'O {self.bichinho} utilizou o Bubble! Acerto em cheio!')
+            print(f'O {self.bichinho} utilizou o Bubble! O ataque foi em cheio!')
            
         elif 5<=x<=7:
             alvo.vida = alvo.vida - 9
-            return print(f'O {self.bichinho} utilizou o Bubble! Acerto normal!')
+            print(f'O {self.bichinho} utilizou o Bubble! O ataque foi normal!')
             
         else: 
             alvo.vida = alvo.vida -3
-            return print(f'O {self.bichinho} utilizou o Bubble! O ataque foi fraco!')
+            print(f'O {self.bichinho} utilizou o Bubble! O ataque foi fraco!')
             
     def Ataque_carregado_I(self,alvo):
         x = random.randint(1,10)
@@ -235,15 +237,15 @@ class Squirtle(Pokemon):
         #ataqueerrado 1-4
         if 8<=x<=10:
             alvo.vida = alvo.vida - 20
-            return print(f'O {self.bichinho} utilizou o Water Pulse! Acerto em cheio!')
+            print(f'O {self.bichinho} utilizou o Water Pulse! O ataque foi em cheio!')
             
         elif 5<=x<=7:
             alvo.vida = alvo.vida - 12
-            return print(f'O {self.bichinho} utilizou o Water Pulse! Acerto normal!')
+            print(f'O {self.bichinho} utilizou o Water Pulse! O ataque foi normal!')
            
         else: 
             alvo.vida = alvo.vida - 4
-            return print(f'O {self.bichinho} utilizou o Water Pulse! O ataque foi fraco!')
+            print(f'O {self.bichinho} utilizou o Water Pulse! O ataque foi fraco!')
             
 class Wartortle(Squirtle):
     def __init__(self):
@@ -255,15 +257,15 @@ class Wartortle(Squirtle):
         #ataqueerrado 1-4
         if 8<=x<=10:
             alvo.vida = alvo.vida - 15
-            return print(f'O {self.bichinho} utilizou o Water Gun! Acerto em cheio!')
+            print(f'O {self.bichinho} utilizou o Water Gun! O ataque foi em cheio!')
             
         elif 5<=x<=7:
             alvo.vida = alvo.vida - 9
-            return print(f'O {self.bichinho} utilizou o Water Gun! Acerto normal!')
+            print(f'O {self.bichinho} utilizou o Water Gun! O ataque foi normal!')
             
         else: 
             alvo.vida = alvo.vida -3
-            return print(f'O {self.bichinho} utilizou o Water Gun! O ataque foi fraco!')
+            print(f'O {self.bichinho} utilizou o Water Gun! O ataque foi fraco!')
             
     def Ataque_carregado_II(self,alvo):
         x = random.randint(1,10)
@@ -272,15 +274,15 @@ class Wartortle(Squirtle):
         #ataqueerrado 1-4
         if 8<=x<=10:
             alvo.vida = alvo.vida - 20
-            return print(f'O {self.bichinho} utilizou o Aqua Jet! Acerto em cheio!')
+            print(f'O {self.bichinho} utilizou o Aqua Jet! O ataque foi em cheio!')
             
         elif 5<=x<=7:
             alvo.vida = alvo.vida - 12
-            return print(f'O {self.bichinho} utilizou o Aqua Jet! Acerto normal!')
+            print(f'O {self.bichinho} utilizou o Aqua Jet! O ataque foi normal!')
             
         else: 
             alvo.vida = alvo.vida - 4
-            return print(f'O {self.bichinho} utilizou o Aqua Jet! O ataque foi fraco!')
+            print(f'O {self.bichinho} utilizou o Aqua Jet! O ataque foi fraco!')
             
 class Blastoise(Wartortle):
     def __init__(self):
@@ -292,18 +294,18 @@ class Blastoise(Wartortle):
         #ataqueerrado 1-4
         if 8<=x<=10:
             alvo.vida = alvo.vida - 60
-            return print(f'O {self.bichinho} utilizou o Hydro Pump! Acerto em cheio!')
+            print(f'O {self.bichinho} utilizou o Hydro Pump! O ataque foi em cheio!')
             
         elif 5<=x<=7:
             alvo.vida = alvo.vida - 30
-            return print(f'O {self.bichinho} utilizou o Hydro Pump! Acerto normal!')
+            print(f'O {self.bichinho} utilizou o Hydro Pump! O ataque foi normal!')
             
         else: 
             alvo.vida = alvo.vida - 15
-            return print(f'O {self.bichinho} utilizou o Hydro Pump! O ataque foi fraco!')
+            print(f'O {self.bichinho} utilizou o Hydro Pump! O ataque foi fraco!')
             
 #======================================================================================================================
-
+#a seguir, criamos uma função para poder escolher qual ataque o computador(Dono do ginásio) ira usar para a batalha, utilizando como artificio a biblioteca random
 def computadormovimentos(alvonome, evolucaoPC):
     if evolucaoPC == 1:
         escolhaataque = random.randint(1,3)
@@ -340,7 +342,7 @@ def computadormovimentos(alvonome, evolucaoPC):
         elif escolhaataque == 6:
             return alvonome.Ataque_especial(pokemonusuario)
 
-#Mecanismo para transformaar a escolha do usuário em uma classe de pokemon válida -----------------------------------------------------------------
+#Mecanismo para transformar a escolha do usuário em uma classe de pokemon válida -----------------------------------------------------------------
 bichinho = input('COm qual Pokemon você deseja jogar: Charmander, Bulbasaur ou Squirtle? ')
 evolucao = int(input('Qual evolução desse Pokemon você deseja usar: 1, 2 ou 3? '))
 if bichinho == "Charmander":
@@ -430,19 +432,19 @@ if evolucao ==  1:
             pokemonusuario.ataquebasico(alvonome)
             print(computadormovimentos(alvonome, evolucaoPC))
             print(f"Seu {pokemonusuario.bichinho} tem PS = {pokemonusuario.vida}")
-            print(f"Seu {alvonome.bichinho} tem PS = {alvonome.vida}")
+            print(f"O {alvonome.bichinho} adversário tem PS = {alvonome.vida}")
             print("-"*60)
         elif movimento == 2:
             pokemonusuario.Ataque_rápido_I(alvonome)
             print(computadormovimentos(alvonome, evolucaoPC))
             print(f"Seu {pokemonusuario.bichinho} tem PS = {pokemonusuario.vida}")
-            print(f"Seu {alvonome.bichinho} tem PS = {alvonome.vida}")
+            print(f"O {alvonome.bichinho} adversário tem PS = {alvonome.vida}")
             print("-"*60)
         elif movimento == 3:
             pokemonusuario.Ataque_carregado_I(alvonome)
             print(computadormovimentos(alvonome, evolucaoPC))
             print(f"Seu {pokemonusuario.bichinho} tem PS = {pokemonusuario.vida}")
-            print(f"Seu {alvonome.bichinho} tem PS = {alvonome.vida}")
+            print(f"O {alvonome.bichinho} adversário tem PS = {alvonome.vida}")
             print("-"*60)
     if pokemonusuario.vida > 0:
         print(f"Você venceu! {alvonome.bichinho} foi derrotado por seu {pokemonusuario.bichinho}")
@@ -462,31 +464,31 @@ elif evolucao == 2:
             pokemonusuario.ataquebasico(alvonome)
             print(computadormovimentos(alvonome, evolucaoPC))
             print(f"Seu {pokemonusuario.bichinho} tem PS = {pokemonusuario.vida}")
-            print(f"Seu {alvonome.bichinho} tem PS = {alvonome.vida}")
+            print(f"O {alvonome.bichinho} adversário tem PS = {alvonome.vida}")
             print("-"*60)
         elif movimento == 2:
             pokemonusuario.Ataque_rápido_I(alvonome)
             print(computadormovimentos(alvonome, evolucaoPC))
             print(f"Seu {pokemonusuario.bichinho} tem PS = {pokemonusuario.vida}")
-            print(f"Seu {alvonome.bichinho} tem PS = {alvonome.vida}")
+            print(f"O {alvonome.bichinho} adversário tem PS = {alvonome.vida}")
             print("-"*60)
         elif movimento == 3:
             pokemonusuario.Ataque_carregado_I(alvonome)
             print(computadormovimentos(alvonome, evolucaoPC))
             print(f"Seu {pokemonusuario.bichinho} tem PS = {pokemonusuario.vida}")
-            print(f"Seu {alvonome.bichinho} tem PS = {alvonome.vida}")
+            print(f"O {alvonome.bichinho} adversário tem PS = {alvonome.vida}")
             print("-"*60)
         elif movimento == 4:
             pokemonusuario.Ataque_rápido_II(alvonome)
             print(computadormovimentos(alvonome, evolucaoPC))
             print(f"Seu {pokemonusuario.bichinho} tem PS = {pokemonusuario.vida}")
-            print(f"Seu {alvonome.bichinho} tem PS = {alvonome.vida}")
+            print(f"O {alvonome.bichinho} adversário tem PS = {alvonome.vida}")
             print("-"*60)
         elif movimento == 5:
             pokemonusuario.Ataque_carregado_II(alvonome)
             print(computadormovimentos(alvonome, evolucaoPC))
             print(f"Seu {pokemonusuario.bichinho} tem PS = {pokemonusuario.vida}")
-            print(f"Seu {alvonome.bichinho} tem PS = {alvonome.vida}")
+            print(f"O  {alvonome.bichinho} adversário tem PS = {alvonome.vida}")
             print("-"*60)
     if pokemonusuario.vida > 0:
             print(f"Você venceu!{alvonome.bichinho} foi derrotado por seu {pokemonusuario.bichinho}")
@@ -507,37 +509,37 @@ elif evolucao == 3:
             pokemonusuario.ataquebasico(alvonome)
             print(computadormovimentos(alvonome, evolucaoPC))
             print(f"Seu {pokemonusuario.bichinho} tem PS = {pokemonusuario.vida}")
-            print(f"Seu {alvonome.bichinho} tem PS = {alvonome.vida}")
+            print(f"O {alvonome.bichinho} adversário tem PS = {alvonome.vida}")
             print("-"*60)
         elif movimento == 2:
             pokemonusuario.Ataque_rápido_I(alvonome)
             print(computadormovimentos(alvonome, evolucaoPC))
             print(f"Seu {pokemonusuario.bichinho} tem PS = {pokemonusuario.vida}")
-            print(f"Seu {alvonome.bichinho} tem PS = {alvonome.vida}")
+            print(f"O {alvonome.bichinho} adversário tem PS = {alvonome.vida}")
             print("-"*60)
         elif movimento == 3:
             pokemonusuario.Ataque_carregado_I(alvonome)
             print(computadormovimentos(alvonome, evolucaoPC))
             print(f"Seu {pokemonusuario.bichinho} tem PS = {pokemonusuario.vida}")
-            print(f"Seu {alvonome.bichinho} tem PS = {alvonome.vida}")
+            print(f"O {alvonome.bichinho} adversário tem PS = {alvonome.vida}")
             print("-"*60)
         elif movimento == 4:
             pokemonusuario.Ataque_rápido_II(alvonome)
             print(computadormovimentos(alvonome, evolucaoPC))
             print(f"Seu {pokemonusuario.bichinho} tem PS = {pokemonusuario.vida}")
-            print(f"Seu {alvonome.bichinho} tem PS = {alvonome.vida}")
+            print(f"O {alvonome.bichinho} adversário tem PS = {alvonome.vida}")
             print("-"*60)
         elif movimento == 5:
             pokemonusuario.Ataque_carregado_II(alvonome)
             print(computadormovimentos(alvonome, evolucaoPC))
             print(f"Seu {pokemonusuario.bichinho} tem PS = {pokemonusuario.vida}")
-            print(f"Seu {alvonome.bichinho} tem PS = {alvonome.vida}")
+            print(f"O {alvonome.bichinho} adversário tem PS = {alvonome.vida}")
             print("-"*60)
         elif movimento == 6:
             pokemonusuario.Ataque_especial(alvonome)
             print(computadormovimentos(alvonome, evolucaoPC))
             print(f"Seu {pokemonusuario.bichinho} tem PS = {pokemonusuario.vida}")
-            print(f"Seu {alvonome.bichinho} tem PS = {alvonome.vida}")
+            print(f"O {alvonome.bichinho} adversário tem PS = {alvonome.vida}")
             print("-"*60)
     if pokemonusuario.vida > 0:
             print(f"Você venceu! {alvonome.bichinho} foi derrotado por seu {pokemonusuario.bichinho}")
