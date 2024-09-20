@@ -390,7 +390,7 @@ elif bichinho== "Bulbasaur":
     elif evolucao == 3:
         pokemonusuario = Venusaur()
         ataquespossíveis = 6
-        print("Bulbasaur evoluiu para Ivysaur e IvysaurBU evoluiu para Venusaur.")
+        print("Bulbasaur evoluiu para Ivysaur e Ivysaur evoluiu para Venusaur.")
 else:
     print("Isso não é uma resposta válida, responda seriamente ou saia desse ginásio!")
 
