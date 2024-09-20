@@ -341,9 +341,19 @@ def computadormovimentos(alvonome, evolucaoPC):
             return alvonome.Ataque_carregado_II(pokemonusuario)
         elif escolhaataque == 6:
             return alvonome.Ataque_especial(pokemonusuario)
+        
+#Função para colocar espaçamentos
+def faixa():
+    print ("-"*160)
+    return "-"*160
 
 #Mecanismo para transformar a escolha do usuário em uma classe de pokemon válida -----------------------------------------------------------------
-bichinho = input('COm qual Pokemon você deseja jogar: Charmander, Bulbasaur ou Squirtle? ')
+print(faixa())
+print( "x"*70 , "GINÁSIO POKÉMON" , "x"*70)
+print(faixa())
+print("Bem Vindo! Você está no ginásio Pokémon. Aqui você vai poder escolher seu Pokemon inicial, evolui-lo ou não e batalhar com ele contra um oponente de nossa escolha. Venha e descubra quais são os ataques dos nossos Pokémons. E quem sabe você não ganha nosso líder do ginásio...")
+print(faixa())
+bichinho = input('Com qual Pokemon você deseja jogar: Charmander, Bulbasaur ou Squirtle? ')
 evolucao = int(input('Qual evolução desse Pokemon você deseja usar: 1, 2 ou 3? '))
 if bichinho == "Charmander":
     if evolucao == 1:
